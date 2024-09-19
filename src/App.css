@@ -1,0 +1,171 @@
+/* General body styling */
+body {
+  background: linear-gradient(135deg, #1c1e22 0%, #32363a 100%);
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Calculator container */
+.calculator {
+  max-width: 350px;
+  margin: 100px auto;
+  padding: 25px;
+  background-color: #475358;
+  border-radius: 20px;
+  box-shadow: 0px 5px 20px rgba(44, 233, 233, 0.4);
+  transition: all 0.3s ease;
+  border: 1px solid rgb(85, 85, 85);
+  animation: shadow-move 3s infinite ease-in-out;
+}
+
+/* Animation for moving shadow */
+@keyframes shadow-move {
+  0% {
+    box-shadow: 0px 5px 20px rgba(44, 233, 233, 0.4);
+  }
+  25% {
+    box-shadow: 10px 20px 30px rgba(44, 180, 233, 0.6);
+  }
+  50% {
+    box-shadow: 0px 25px 50px rgba(143, 129, 143, 0.5);
+  }
+  75% {
+    box-shadow: -10px 20px 30px rgba(44, 233, 180, 0.6);
+  }
+  100% {
+    box-shadow: 0px 5px 20px rgba(44, 233, 233, 0.4);
+  }
+}
+
+/* Display and history styling */
+.display {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.history {
+  font-size: 1.2rem;
+  color: #aaa;
+  text-align: right;
+  margin-bottom: 5px;
+}
+
+.display input {
+  width: 100%;
+  height: 60px;
+  font-size: calc(1.5rem + 1vw); /* Dynamic font size */
+  background-color: #1e2125;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: right;
+  box-sizing: border-box;
+  box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.7);
+  outline: none;
+  overflow: hidden;
+}
+
+/* Add focus states to the input field */
+.display input:focus {
+  border: 1px solid #61dafb;
+  box-shadow: inset 0px 0px 8px rgba(0, 150, 200, 0.8);
+}
+
+/* Keypad grid layout */
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+/* Button styling with hover and active animations */
+button {
+  padding: 20px;
+  font-size: 1.8rem;
+  border: none;
+  background-color: #99dcee;
+  color: #000;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+  background-color: #4798c0;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: scale(0.95);
+  background-color: #3a95c4;
+}
+
+/* Styling for Clear and Equals buttons */
+button.clear {
+  grid-column: span 2;
+  background-color: #cf1407;
+  color: white;
+}
+
+button.clear:hover {
+  background-color: #ff0400;
+}
+
+button.clear:active {
+  background-color: #d32f2f;
+}
+
+button.equals {
+  grid-column: span 2;
+  background-color: #e69616;
+  color: white;
+}
+
+button.equals:hover {
+  background-color: #ff8c00;
+  transform: translateY(-2px);
+}
+
+button.equals:active {
+  background-color: #ff8800;
+}
+
+button.zero {
+  grid-column: span 2;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 400px) {
+  .calculator {
+    max-width: 100%;
+    margin: 50px 10px;
+  }
+
+  button {
+    padding: 15px;
+    font-size: 1.5rem;
+  }
+
+  .display input {
+    font-size: calc(1.2rem + 1vw); /* Adjust font size for smaller screens */
+    height: 50px;
+  }
+
+  .history {
+    font-size: 1rem;
+  }
+}
+
+/* Add smooth transition to shadow changes */
+.calculator {
+  animation: shadow-move 3s infinite ease-in-out;
+}
